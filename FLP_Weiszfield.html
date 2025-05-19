@@ -1,29 +1,169 @@
-<html>
-<body backgroundColor="red" style="background-color:lightyellow; background-size: cover; background-position: center; padding: 20px; font-family: Arial, sans-serif; color: #333;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weiszfeld Algorithm Explained</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .formula {
+      background-color: #fff9c4; /* Light yellow */
+      border-left: 4px solid #ccc;
+      padding: 12px;
+      margin: 20px 0;
+    }
+    p {
+      margin: 10px 0;
+    }
+    ul {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body  style="background-color:lightyellow;">
+    <h1><p data-start="243" data-end="309">🚀 <strong data-start="246" data-end="304">Optimizing Facility Location with the Weiszfeld Method</strong> 🏭📍</p></h1>
+    <p data-start="311" data-end="541">Ever wondered how companies decide where to set up a <strong data-start="364" data-end="418">new warehouse, service center, or distribution hub</strong>? The answer lies in <strong data-start="439" data-end="473">Facility Location Optimization</strong> &mdash; a powerful problem in operations research with real-world impact.</p>
+    <p data-start="543" data-end="742">🔍 <strong data-start="572" data-end="595">Weiszfeld Algorithm</strong>, a classic yet elegant iterative method to find the <strong data-start="648" data-end="668">optimal location</strong> that minimizes the <em data-start="688" data-end="715">weighted sum of distances</em> to a set of demand points.</p>
+    <p data-start="744" data-end="920">💡 Imagine multiple customer locations, each with a different demand/weight(w). The goal? Place a new facility so that the <strong data-start="857" data-end="886">total transportation cost</strong> (weighted distance) is minimized.</p>
+    <p data-start="922" data-end="962">✨ The Weiszfeld method works like magic:</p>
+    <ol data-start="963" data-end="1145">
+    <li data-start="963" data-end="1013">
+    <p data-start="966" data-end="1013">Start with an initial guess (e.g., a centroid).</p>
+    </li>
+    <li data-start="1014" data-end="1091">
+    <p data-start="1017" data-end="1091">Iteratively re-calculate a weighted average, adjusting based on proximity.</p>
+    </li>
+    <li data-start="1092" data-end="1145">
+    <p data-start="1095" data-end="1145">Watch it converge beautifully to the optimal spot!</p>
+    </li>
+    </ol>
+    <p data-start="1147" data-end="1342">📈 The animated trajectory shows how the solution <em data-start="1213" data-end="1238">steps closer and closer</em> to the best location. It&rsquo;s simple, fast, and incredibly insightful for both teaching and practical use!</p>
+    <p data-start="1344" data-end="1514">🔗 Whether you're in <strong data-start="1365" data-end="1381">supply chain</strong>, <strong data-start="1383" data-end="1401">urban planning</strong>, or <strong data-start="1406" data-end="1419">logistics</strong>, this method gives you a <strong data-start="1445" data-end="1472">mathematically grounded</strong>, efficient way to make smarter decisions.</p>
+    
+    <img src="FLP_GIF.gif" alt="Weiszfeld Algorithm Animation" style="width: 100%; max-width: 600px; border-radius: 10px; margin-top: 20px;" data-start="1516" data-end="1615"/>
+<p>In the animation, the initial guess is assumed to be (1,1).</p>
+<h1>Weiszfeld Algorithm</h1>
 
-<p data-start="243" data-end="309">🚀 <strong data-start="246" data-end="304">Optimizing Facility Location with the Weiszfeld Method</strong> 🏭📍</p>
-<p data-start="311" data-end="541">Ever wondered how companies decide where to set up a <strong data-start="364" data-end="418">new warehouse, service center, or distribution hub</strong>? The answer lies in <strong data-start="439" data-end="473">Facility Location Optimization</strong> &mdash; a powerful problem in operations research with real-world impact.</p>
-<p data-start="543" data-end="742">🔍 <strong data-start="572" data-end="595">Weiszfeld Algorithm</strong>, a classic yet elegant iterative method to find the <strong data-start="648" data-end="668">optimal location</strong> that minimizes the <em data-start="688" data-end="715">weighted sum of distances</em> to a set of demand points.</p>
-<p data-start="744" data-end="920">💡 Imagine multiple customer locations, each with a different demand. The goal? Place a new facility so that the <strong data-start="857" data-end="886">total transportation cost</strong> (weighted distance) is minimized.</p>
-<p data-start="922" data-end="962">✨ The Weiszfeld method works like magic:</p>
-<ol data-start="963" data-end="1145">
-<li data-start="963" data-end="1013">
-<p data-start="966" data-end="1013">Start with an initial guess (e.g., a centroid).</p>
-</li>
-<li data-start="1014" data-end="1091">
-<p data-start="1017" data-end="1091">Iteratively re-calculate a weighted average, adjusting based on proximity.</p>
-</li>
-<li data-start="1092" data-end="1145">
-<p data-start="1095" data-end="1145">Watch it converge beautifully to the optimal spot!</p>
-</li>
-</ol>
-<p data-start="1147" data-end="1342">📈 I even animated the trajectory so you can see how the solution <em data-start="1213" data-end="1238">steps closer and closer</em> to the best location. It&rsquo;s simple, fast, and incredibly insightful for both teaching and practical use!</p>
-<p data-start="1344" data-end="1514">🔗 Whether you're in <strong data-start="1365" data-end="1381">supply chain</strong>, <strong data-start="1383" data-end="1401">urban planning</strong>, or <strong data-start="1406" data-end="1419">logistics</strong>, this method gives you a <strong data-start="1445" data-end="1472">mathematically grounded</strong>, efficient way to make smarter decisions.</p>
-<p data-start="1516" data-end="1615">Curious to see it in action or want to collaborate on similar analytics projects? Let&rsquo;s connect! 🤝</p>
+<p>
+  The Weiszfeld algorithm is an iterative method used to solve the <strong>single-facility location problem</strong> in a Euclidean space. It finds the optimal point \( x \in \mathbb{R}^2 \) that minimizes the weighted sum of distances to given demand points.
+</p>
 
+<h2>Problem Statement</h2>
+<p>
+  Given:
+  <ul>
+    <li>Demand points \( p_1, p_2, \dots, p_n \in \mathbb{R}^d \)</li>
+    <li>Positive weights \( w_1, w_2, \dots, w_n \)</li>
+  </ul>
+</p>
 
+<p>The objective is to minimize:</p>
+<div class="formula">
+  \[
+  f(x) = \sum_{i=1}^{n} w_i \cdot \| x - p_i \|
+  \]
+</div>
 
+<h2>Weiszfeld Iteration Formula</h2>
+<p>
+  Starting from an initial guess \( x^{(0)} \), the location is updated iteratively:
+</p>
 
-<p data-start="1617" data-end="1741">#OperationsResearch #SupplyChain #FacilityLocation #Weiszfeld #DataScience #Optimization #Python #Logistics #Analytics #ORMS</p>
+<div class="formula">
+  \[
+  x^{(k+1)} = \frac{\sum_{i=1}^{n} \frac{w_i p_i}{\|x^{(k)} - p_i\|}}{\sum_{i=1}^{n} \frac{w_i}{\|x^{(k)} - p_i\|}}
+  \]
+</div>
+
+<h2>Notation Explanation</h2>
+<p>
+  Where:
+  <ul>
+    <li>\( x^{(k)} \): the current estimate of the optimal location at iteration \( k \)</li>
+    <li>\( p_i \): the coordinates of the \( i \)-th demand point</li>
+    <li>\( w_i \): the weight (importance) of the \( i \)-th demand point</li>
+    <li>\( \|x^{(k)} - p_i\| \): the Euclidean distance between the current estimate and demand point \( p_i \)</li>
+  </ul>
+</p>
+
+<h2>Stopping Criterion</h2>
+<p>The iterations stop when:</p>
+<div class="formula">
+  \[
+  \|x^{(k+1)} - x^{(k)}\| < \varepsilon
+  \]
+</div>
+<p>Where \( \varepsilon \) is a small positive tolerance value.</p>
+
+<h2>Singularity Handling</h2>
+<p>
+  If at any point \( x^{(k)} = p_i \) for some \( i \), the denominator becomes zero. In such cases, the algorithm stops and returns \( x = p_i \) as the solution.
+</p>
+
+<h2>Worked Example with 3 Demand Points</h2>
+<p>Let’s consider 3 demand points with equal weights:</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr><th>Point</th><th>Coordinates</th><th>Weight</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>\( p_1 \)</td><td>(1, 3)</td><td>1</td></tr>
+    <tr><td>\( p_2 \)</td><td>(4, 4)</td><td>1</td></tr>
+    <tr><td>\( p_3 \)</td><td>(5, 1)</td><td>1</td></tr>
+  </tbody>
+</table>
+
+<h3>Step 1: Initial Guess</h3>
+<p>We start with the centroid:</p>
+<div class="formula">
+  \[
+  x^{(0)} = \frac{1}{3} \left( (1,3) + (4,4) + (5,1) \right) = \left( \frac{10}{3}, \frac{8}{3} \right) \approx (3.33, 2.67)
+  \]
+</div>
+
+<h3>Step 2: Apply Weiszfeld Iteration</h3>
+<p>Calculate distances:</p>
+<div class="formula">
+  \[
+  \begin{align*}
+  \|x^{(0)} - p_1\| &\approx 2.37 \\
+  \|x^{(0)} - p_2\| &\approx 1.49 \\
+  \|x^{(0)} - p_3\| &\approx 2.36 \\
+  \end{align*}
+  \]
+</div>
+
+<p>Apply the Weiszfeld formula:</p>
+<div class="formula">
+  \[
+  x^{(1)} = \frac{ \frac{(1,3)}{2.37} + \frac{(4,4)}{1.49} + \frac{(5,1)}{2.36} }{ \frac{1}{2.37} + \frac{1}{1.49} + \frac{1}{2.36} } \approx (3.44, 2.88)
+  \]
+</div>
+
+<h3>Step 3: Iterate</h3>
+<p>Repeat the computation using the new point until the change in \( x^{(k)} \) is less than the chosen tolerance \( \varepsilon \).</p>
+
+<h2>Intuition</h2>
+<p>
+  The algorithm computes a weighted average of the demand points, where closer and more heavily weighted points exert stronger influence. This leads to a balance point minimizing total travel cost.
+</p>
+
+<h2>Applications</h2>
+<ul>
+  <li>Facility location planning (e.g., warehouses, hospitals, service centers)</li>
+  <li>Clustering and data science (approximating centroids)</li>
+  <li>Operations research and logistics</li>
+</ul>
+<a href="FLP_Weiszfield.py"> Python Code</href>
 </body>
 </html>
